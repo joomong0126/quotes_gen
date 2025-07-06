@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CursorDP Favicon Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .favicon-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .favicon {
+            width: 32px;
+            height: 32px;
+            margin: 10px;
+            display: inline-block;
+            border: 1px solid #ddd;
+        }
+        
+        .favicon-large {
+            width: 64px;
+            height: 64px;
+        }
+        
+        /* Design 1: Cursor + Data Bars */
+        .favicon-design1 {
+            background: linear-gradient(45deg, #2196F3, #1976D2);
+            position: relative;
+            border-radius: 4px;
+        }
+        
+        .favicon-design1::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid white;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        
+        .favicon-design1::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 8px;
+            height: 2px;
+            background: white;
+            box-shadow: 0 3px 0 white, 0 6px 0 white;
+        }
+        
+        /* Design 2: Stylized CD (Cursor + Data) */
+        .favicon-design2 {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            position: relative;
+            border-radius: 4px;
+        }
+        
+        .favicon-design2::before {
+            content: 'C';
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .favicon-design2::after {
+            content: 'D';
+            position: absolute;
+            top: 50%;
+            right: 30%;
+            transform: translate(50%, -50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        /* Design 3: Abstract Cursor Arrow */
+        .favicon-design3 {
+            background: linear-gradient(45deg, #FF9800, #F57F17);
+            position: relative;
+            border-radius: 4px;
+        }
+        
+        .favicon-design3::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid white;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        
+        .favicon-design3::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .description {
+            color: #666;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .sizes {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .size-label {
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>CursorDP Favicon Designs</h1>
+    
+    <div class="favicon-container">
+        <h3>Design 1: Cursor + Data Bars</h3>
+        <div class="sizes">
+            <span class="size-label">16x16:</span>
+            <div class="favicon favicon-design1" style="width: 16px; height: 16px;"></div>
+            <span class="size-label">32x32:</span>
+            <div class="favicon favicon-design1"></div>
+            <span class="size-label">64x64:</span>
+            <div class="favicon favicon-design1 favicon-large"></div>
+        </div>
+        <div class="description">
+            Blue gradient with white cursor arrow and data visualization bars
+        </div>
+    </div>
+    
+    <div class="favicon-container">
+        <h3>Design 2: C + D Letters</h3>
+        <div class="sizes">
+            <span class="size-label">16x16:</span>
+            <div class="favicon favicon-design2" style="width: 16px; height: 16px;"></div>
+            <span class="size-label">32x32:</span>
+            <div class="favicon favicon-design2"></div>
+            <span class="size-label">64x64:</span>
+            <div class="favicon favicon-design2 favicon-large"></div>
+        </div>
+        <div class="description">
+            Green gradient with white "C" and "D" letters for CursorDP
+        </div>
+    </div>
+    
+    <div class="favicon-container">
+        <h3>Design 3: Abstract Cursor</h3>
+        <div class="sizes">
+            <span class="size-label">16x16:</span>
+            <div class="favicon favicon-design3" style="width: 16px; height: 16px;"></div>
+            <span class="size-label">32x32:</span>
+            <div class="favicon favicon-design3"></div>
+            <span class="size-label">64x64:</span>
+            <div class="favicon favicon-design3 favicon-large"></div>
+        </div>
+        <div class="description">
+            Orange gradient with stylized cursor arrow and processing dot
+        </div>
+    </div>
+    
+    <div style="margin-top: 30px; max-width: 600px; text-align: center;">
+        <h3>How to Convert to ICO/PNG:</h3>
+        <ol style="text-align: left; color: #666;">
+            <li>Take a screenshot of your preferred design</li>
+            <li>Use online tools like <strong>favicon.io</strong> or <strong>realfavicongenerator.net</strong></li>
+            <li>Or use design software like GIMP, Photoshop, or Canva</li>
+            <li>Create versions in 16x16, 32x32, and 48x48 pixels</li>
+            <li>Save as both PNG and ICO formats</li>
+        </ol>
+    </div>
+</body>
+</html> 

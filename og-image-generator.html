@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명언 제조기 - 오픈 그래프 이미지 생성기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .og-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 800px;
+            padding: 40px;
+        }
+        
+        .og-title {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
+        }
+        
+        .og-subtitle {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .og-quote {
+            font-size: 28px;
+            font-weight: 600;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        
+        .og-quote::before {
+            content: '"';
+            position: absolute;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.3);
+            top: -20px;
+            left: 20px;
+        }
+        
+        .og-quote::after {
+            content: '"';
+            position: absolute;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.3);
+            bottom: -60px;
+            right: 20px;
+        }
+        
+        .og-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .og-decoration2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            bottom: -150px;
+            left: -150px;
+        }
+        
+        .og-sparkles {
+            position: absolute;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.6);
+            animation: sparkle 3s infinite;
+        }
+        
+        .sparkle1 { top: 80px; left: 100px; animation-delay: 0s; }
+        .sparkle2 { top: 120px; right: 150px; animation-delay: 1s; }
+        .sparkle3 { bottom: 100px; left: 200px; animation-delay: 2s; }
+        .sparkle4 { bottom: 150px; right: 200px; animation-delay: 0.5s; }
+        
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        
+        .info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        
+        .info h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .size-info {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="size-info">
+        ⚡ 오픈 그래프 이미지 크기: 1200 x 630 픽셀 (소셜 미디어 최적화)
+    </div>
+    
+    <div class="og-container" id="ogImage">
+        <div class="og-decoration"></div>
+        <div class="og-decoration2"></div>
+        
+        <div class="og-sparkles sparkle1">✨</div>
+        <div class="og-sparkles sparkle2">⭐</div>
+        <div class="og-sparkles sparkle3">✨</div>
+        <div class="og-sparkles sparkle4">💫</div>
+        
+        <div class="og-content">
+            <div class="og-title">명언 제조기</div>
+            <div class="og-subtitle">희망과 용기를 전하는 명언들</div>
+            <div class="og-quote">
+                매일 새로운 명언으로<br>
+                긍정적인 마음가짐을 유지하세요
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="changeQuote()">명언 변경</button>
+        <button class="btn" onclick="downloadInstructions()">다운로드 방법</button>
+    </div>
+    
+    <div class="info">
+        <h3>🎨 오픈 그래프 이미지 생성 완료!</h3>
+        <p><strong>이미지 저장 방법:</strong></p>
+        <ol>
+            <li>위의 이미지 영역에서 마우스 우클릭</li>
+            <li>"다른 이름으로 저장" 또는 스크린샷 도구 사용</li>
+            <li>파일명을 <code>og-image.png</code>로 저장</li>
+            <li>웹사이트 폴더에 저장하면 자동으로 연결됩니다</li>
+        </ol>
+        
+        <p><strong>권장 도구:</strong></p>
+        <ul>
+            <li>Windows: Snipping Tool 또는 Alt + Print Screen</li>
+            <li>Mac: Cmd + Shift + 4</li>
+            <li>브라우저: 개발자 도구 → 스크린샷 기능</li>
+        </ul>
+        
+        <p><strong>사용 효과:</strong></p>
+        <ul>
+            <li>카카오톡, 페이스북 등에서 링크 공유시 이미지 표시</li>
+            <li>Twitter 카드로 트윗에 이미지 미리보기</li>
+            <li>검색 엔진에서 더 나은 노출 효과</li>
+        </ul>
+    </div>
+    
+    <script>
+        const quotes = [
+            "매일 새로운 명언으로<br>긍정적인 마음가짐을 유지하세요",
+            "오늘도 힘내세요!<br>당신의 노력은 결코 헛되지 않습니다",
+            "실패는 성공으로 가는<br>가장 빠른 길입니다",
+            "당신이 멈추지 않는 한<br>얼마나 느린지는 중요하지 않습니다",
+            "작은 성취도 반복되면<br>큰 성공이 됩니다"
+        ];
+        
+        let currentQuoteIndex = 0;
+        
+        function changeQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            const quoteElement = document.querySelector('.og-quote');
+            quoteElement.innerHTML = quotes[currentQuoteIndex];
+        }
+        
+        function downloadInstructions() {
+            alert('1. 이미지 영역에서 우클릭 → "다른 이름으로 저장"\n2. 파일명: og-image.png\n3. 웹사이트 폴더에 저장\n4. 소셜 미디어 공유 시 자동으로 표시됩니다!');
+        }
+    </script>
+</body>
+</html> 

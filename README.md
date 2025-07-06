@@ -2,6 +2,8 @@
 
 > 희망과 용기를 전하는 랜덤 명언 웹사이트
 
+🌐 **라이브 데모**: [https://joomong0126.github.io/quotes_gen/](https://joomong0126.github.io/quotes_gen/)
+
 오랜 취업 준비 기간으로 지쳐 있는 청년들에게 희망과 긍정적인 메시지를 전달하는 웹사이트입니다. 매일 새로운 명언을 통해 다시 일어설 힘을 얻고, 긍정적인 마음가짐을 유지할 수 있도록 도와드립니다.
 
 ## 🎯 프로젝트 목표
@@ -30,6 +32,7 @@
 - **페이지 재방문 시**: 새로운 명언 자동 표시
 - **중복 클릭 방지**: 애니메이션 중 버튼 비활성화
 - **후원 기능**: Buy Me A Coffee 연동 후원 버튼
+- **소셜 미디어 최적화**: 오픈 그래프 이미지 및 메타 태그 지원
 
 ## 🛠️ 기술 스택
 
@@ -41,12 +44,15 @@
 
 ```
 quotes-gen/
-├── index.html          # 메인 HTML 파일
-├── styles.css          # 스타일시트
-├── script.js           # JavaScript 로직
-├── quotes.json         # 명언 데이터
-├── notepads.txt        # PRD 문서
-└── README.md          # 프로젝트 설명서
+├── index.html              # 메인 HTML 파일
+├── styles.css              # 스타일시트
+├── script.js               # JavaScript 로직
+├── quotes.json             # 명언 데이터
+├── notepads.txt            # PRD 문서
+├── README.md              # 프로젝트 설명서
+├── og-image-generator.html # 오픈 그래프 이미지 생성기
+├── og-image.png           # 소셜 미디어 공유 이미지
+└── favicon-preview.html   # 파비콘 미리보기
 ```
 
 ## 🚀 설치 및 실행

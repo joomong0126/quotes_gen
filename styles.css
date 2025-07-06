@@ -151,6 +151,65 @@ body {
     animation: fadeIn 1s ease-out 0.6s both;
 }
 
+/* 후원 섹션 스타일 */
+.support-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.support-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.coffee-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(45deg, #ff6b35, #f7931e);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.coffee-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+    background: linear-gradient(45deg, #ff8559, #ffb347);
+}
+
+.coffee-btn:active {
+    transform: translateY(0);
+}
+
+.coffee-icon {
+    font-size: 1.1rem;
+    animation: steam 2s infinite;
+}
+
+.coffee-text {
+    font-size: 0.9rem;
+}
+
+/* 커피 증기 애니메이션 */
+@keyframes steam {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
 /* 페이드 효과 */
 .fade-out {
     opacity: 0;
@@ -248,6 +307,15 @@ body {
         padding: 12px 25px;
         font-size: 1rem;
     }
+    
+    .coffee-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    .support-text {
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -270,6 +338,16 @@ body {
     
     .quote-container {
         min-height: 150px;
+    }
+    
+    .coffee-btn {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .support-section {
+        margin-top: 15px;
+        padding-top: 15px;
     }
 }
 
